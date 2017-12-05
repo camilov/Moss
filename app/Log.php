@@ -17,7 +17,7 @@ class Log extends Model
     public      $timestamps=false;
 
     protected $fillable = [
-        'id_log', 'tipo_log_id', 'ususario_id','comentario','descripcion','fecha','ip'
+        'id_log', 'tipo_log_id', 'usuario_id','comentario','descripcion','fecha','ip'
     ];
 
     /**
@@ -28,4 +28,15 @@ class Log extends Model
     protected $hidden = [
         
     ];
+
+
+    public function tipoLog()
+    {
+        return $this->belongsTo('App\Log_tipo','tipo_log_id');
+    }
+
+     public function usuario()
+    {
+        return $this->belongsTo('App\User','usuario_id');
+    }
 }

@@ -31,4 +31,19 @@ class User extends Authenticatable
     protected $hidden = [
         'clave'
     ];
+
+     public function interlocutor()
+    {
+        return $this->belongsTo('App\Interlocutor','interlocutor_id');
+    }
+
+     public function log()
+    {
+        return $this->hasMany('App\Log');
+    }
+
+     public function productoCategoria()
+    {
+        return $this->hasMany('App\Producto_categoria');
+    }
 }

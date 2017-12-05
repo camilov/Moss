@@ -28,4 +28,14 @@ class Caja extends Model
     protected $hidden = [
         
     ];
+
+     public function interlocutor()
+    {
+        return $this->belongsTo('App\Interlocutor','interlocutor_id');
+    }
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

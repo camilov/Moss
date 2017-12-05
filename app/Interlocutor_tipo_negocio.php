@@ -23,9 +23,18 @@ class Interlocutor_tipo_negocio extends Model
     /**
      * The attributes that should be hidden for arrays.
      *
-     * @var array
+     * @var array 
      */
     protected $hidden = [
         
     ];
+     public function interlocutor()
+    {
+        return $this->hasMany('App\Interlocutor');
+    }
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

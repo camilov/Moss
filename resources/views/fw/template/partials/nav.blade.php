@@ -73,7 +73,6 @@
                 <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Compras</a></li>
                 <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Ventas</a></li>
                 <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Transformacion de productos</a></li>
-                <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Compras</a></li>
                 <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Comandas</a></li>
                 <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Toma de pedidos</a></li>
                 <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Facturar</a></li>

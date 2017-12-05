@@ -17,7 +17,7 @@ class Producto_categoria extends Model
     public      $timestamps=false;
 
     protected $fillable = [
-        'id_producto_categoria', 'producto_categoria_id', 'usuario_perfil_id','nombre','orden','estado_id','descripcion','descripcion','icon_id','usuario_id','marca_blanca'
+        'id_producto_categoria', 'producto_categoria_id', 'usuario_perfil_id','nombre','orden','estado_id','descripcion','icon_id','usuario_id','marca_blanca'
     ];
 
     /**
@@ -28,4 +28,24 @@ class Producto_categoria extends Model
     protected $hidden = [
         
     ];
+
+     public function producto()
+    {
+        return $this->hasMany('App\Producto');
+    }
+
+     public function usuarioPerfil()
+    {
+        return $this->belongsTo('App\User_perfil','usuario_perfil_id');
+    }
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','Estado_id');
+    }
+
+     public function usuario()
+    {
+        return $this->belongsTo('App\User','usuario_id');
+    }
 }

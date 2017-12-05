@@ -28,4 +28,14 @@ class Interlocutor_clase extends Model
     protected $hidden = [
         
     ];
+
+     public function interlocutor()
+    {
+        return $this->hasmany('App\Interlocutor');
+    }
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

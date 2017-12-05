@@ -29,4 +29,9 @@ class Transaccion extends Model
         'fecha'
     ];
 
+    public function insumoMovimento()
+    {
+        return $this->hasMany('App\Insumo_movimiento');
+    }
+
 }

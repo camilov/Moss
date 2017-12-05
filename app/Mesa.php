@@ -28,4 +28,19 @@ class Mesa extends Model
     protected $hidden = [
         
     ];
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
+
+     public function interlocutor()
+    {
+        return $this->belongsto('App\Interlocutor','interlocutor_id');
+    }
+
+    public function pedido()
+    {
+        return $this->hasMany('App\Pedido');
+    }
 }

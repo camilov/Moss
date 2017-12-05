@@ -28,4 +28,19 @@ class Insumo_movimiento extends Model
     protected $hidden = [
         
     ];
+
+     public function transaccion()
+    {
+        return $this->belongsTo('App\Transaccion','transaccion_id');
+    }
+
+     public function producto()
+    {
+        return $this->belongsTo('App\Producto','producto_id');
+    }
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

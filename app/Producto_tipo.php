@@ -28,4 +28,14 @@ class Producto_tipo extends Model
     protected $hidden = [
         
     ];
+
+     public function producto()
+    {
+        return $this->hasMany('App\Producto');
+    }
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

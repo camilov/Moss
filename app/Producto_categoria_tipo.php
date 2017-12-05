@@ -28,4 +28,11 @@ class Producto_categoria_tipo extends Model
     protected $hidden = [
         
     ];
+
+  
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

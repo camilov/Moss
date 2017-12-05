@@ -28,4 +28,9 @@ class Producto_stock extends Model
     protected $hidden = [
         
     ];
+
+     public function producto()
+    {
+        return $this->belongsTo('App\Producto','producto_id');
+    }
 }

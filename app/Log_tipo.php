@@ -28,4 +28,14 @@ class Log_tipo extends Model
     protected $hidden = [
         
     ];
+
+     public function log()
+    {
+        return $this->hasMany('App\Log');
+    }
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

@@ -28,4 +28,26 @@ class Receta extends Model
     protected $hidden = [
         
     ];
+
+
+     public function interlocutor()
+    {
+        return $this->belongsTo('App\Interlocutor','interlocutor_id');
+    }
+
+    public function producto()
+    {
+        return $this->belongsTo('App\Producto','Producto_id');
+    }
+
+    public function Estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
+
+    public function recetaIngrediente()
+    {
+        return $this->hasMany('App\Receta_ingrediente');
+    }
+
 }

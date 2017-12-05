@@ -28,4 +28,30 @@ class Pedido extends Model
     protected $hidden = [
         
     ];
+
+    public function interlocutor()
+    {
+        return $this->belongsTo('App\Interlocutor','interlocutor_id');
+    }
+
+     public function mesa()
+    {
+        return $this->belongsTo('App\Mesa','mesa_id');
+    }
+
+     public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
+
+
+     public function cuenta()
+    {
+        return $this->belongsTo('App\Cuenta','cuenta_id');
+    }
+
+     public function pedidoItem()
+    {
+        return $this->hasMany('App\Pedido_item');
+    }
 }

@@ -28,4 +28,9 @@ class Unidad_medida extends Model
     protected $hidden = [
         
     ];
+
+     public function producto()
+    {
+        return $this->hasMany('App\Producto');
+    }
 }

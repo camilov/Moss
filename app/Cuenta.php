@@ -28,5 +28,10 @@ class Cuenta extends Model
     protected $hidden = [
         
     ];
+
+     public function pedido()
+    {
+        return $this->hasMany('App\Pedido');
+    }
 }
 
