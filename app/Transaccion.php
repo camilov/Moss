@@ -34,4 +34,34 @@ class Transaccion extends Model
         return $this->hasMany('App\Insumo_movimiento');
     }
 
+    public function cuenta()
+    {
+        return $this->belongsTo('App\Cuenta','cuenta_id');
+    }
+
+    public function transaccionTipo()
+    {
+        return $this->belongsTo('App\Transaccion_tipo','transaccion_tipo_id');
+    }
+
+    public function interlocutor()
+    {
+        return $this->belongsTo('App\Interlocutor','interlocutor_id');
+    }
+
+    public function transaccionPagoMedio()
+    {
+        return $this->belongsTo('App\Transaccion_pago_medio','transaccion_pago_medio_id');
+    }
+
+    public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
+
+    public function transaccionItem()
+    {
+        return $this->hasMany('App\Transaccion_item');
+    }
+
 }

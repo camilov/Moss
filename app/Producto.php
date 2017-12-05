@@ -83,4 +83,9 @@ class Producto extends Model
     {
         return $this->hasmany('App\RecetaIngrediente');
     }
+
+    public function transaccionItem()
+    {
+        return $this->hasMany('App\Transaccion_item');
+    }
 }

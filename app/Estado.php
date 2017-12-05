@@ -111,4 +111,29 @@ class Estado extends Model
     {
         return $this->hasMany('App\Receta_ingrediente');
     }
+
+    public function transaccion()
+    {
+        return $this->hasmany('App\Transaccion');
+    }
+
+    public function transaccionItem()
+    {
+        return $this->hasMany('App\transaccion_item');
+    }
+
+    public function transaccionPagoMedio()
+    {
+        return $this->hasMany('App\Transaccion_pago_medio');
+    }
+
+    public function transaccionTipo()
+    {
+        return $this->hasMany('App\transaccion_tipo');
+    }
+
+    public function unidadMedida()
+    {
+        return $this->hasMany('App\unidad_medida');
+    }
 }

@@ -28,4 +28,24 @@ class Transaccion_item extends Model
     protected $hidden = [
         
     ];
+
+    public function transaccion()
+    {
+        return $this->belongsTo('App\Transaccion','transaccion_id');
+    }
+
+    public function pedidoItem()
+    {
+        return $this->belongsTo('App\pedido_item','pedido_item_id');
+    }
+
+    public function producto()
+    {
+        return $this->belongsTo('App\Producto','producto_id');
+    }
+
+    public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

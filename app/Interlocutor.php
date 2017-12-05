@@ -83,6 +83,12 @@ class Interlocutor extends Model
 
     public function recetaIngrediente()
     {
-        return $this->hasmany('App\Receta);
+        return $this->hasmany('App\Receta');
     }
+
+    public function transaccion()
+    {
+        return $this->hasmany('App\Transaccion');
+    }
+
 }

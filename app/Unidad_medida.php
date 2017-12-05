@@ -33,4 +33,9 @@ class Unidad_medida extends Model
     {
         return $this->hasMany('App\Producto');
     }
+
+    public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

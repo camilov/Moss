@@ -28,4 +28,14 @@ class Transaccion_pago_medio extends Model
     protected $hidden = [
         
     ];
+
+    public function transaccion()
+    {
+        return $this->hasmany('App\Transaccion');
+    }
+
+    public function estado()
+    {
+        return $this->belongsTo('App\Estado','estado_id');
+    }
 }

@@ -48,4 +48,9 @@ class Pedido_item extends Model
     {
         return $this->belongsTo('App\Estado','estado_id');
     }
+
+    public function transaccionItem()
+    {
+        return $this->hasMany('App\Transaccion_item';
+    }
 }

@@ -33,5 +33,10 @@ class Cuenta extends Model
     {
         return $this->hasMany('App\Pedido');
     }
+
+    public function transaccion()
+    {
+        return $this->hasMany('App\Transaccion');
+    }
 }
 
