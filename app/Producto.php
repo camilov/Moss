@@ -14,7 +14,7 @@ class Producto extends Model
 
     protected   $table='producto';
     protected   $primaryKey='id_producto';
-    public      $timestamps=false
+    public      $timestamps=false;
 
     protected $fillable = [
         'id_producto', 'referencia', 'barcode','nombre','nombre_corto','producto_categoria_id','producto_tipo_id','iva','iva_incluido','costo','precio','imagen','descripcion','unidad_medida_id','stock_control','estante','orden','estado_id','interlocutor_id'
@@ -79,7 +79,7 @@ class Producto extends Model
         return $this->hasMany('App\Receta');
     }
 
-    public function receraIngrediente()
+    public function recetaIngrediente()
     {
         return $this->hasmany('App\RecetaIngrediente');
     }

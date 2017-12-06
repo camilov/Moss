@@ -20,4 +20,11 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'fw'], function(){   
 	Route::resource('users','UserController');
+	Route::resource('transacciones','TransaccionController');
+	Route::resource('recetas','RecetaController');
+	Route::get('recetas/{id_receta}/destroy',[
+	       'uses' => 'RecetaController@destroy',
+	        'as'  => 'recetas.destroy'
+	    ]);
+
 	});

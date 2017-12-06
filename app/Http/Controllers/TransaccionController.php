@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Transaccion;
 use Illuminate\Http\Request;
 
-class Transaccion extends Controller
+class TransaccionController extends Controller
 {
     /**
      * Display a listing of the resource.

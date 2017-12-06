@@ -34,10 +34,10 @@ class Receta extends Model
     {
         return $this->belongsTo('App\Interlocutor','interlocutor_id');
     }
-
+ 
     public function producto()
     {
-        return $this->belongsTo('App\Producto','Producto_id');
+        return $this->belongsTo('App\Producto','producto_id');
     }
 
     public function Estado()

@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Receta;
+use App\Interlocutor;
+use App\Producto;
+use App\Estado;
 use Illuminate\Http\Request;
+use App\http\controllers\controller;
+
 
 class RecetaController extends Controller
 {
@@ -14,7 +19,21 @@ class RecetaController extends Controller
      */
     public function index()
     {
-        //
+        $receta = Receta::orderBy('id_receta','ASC')->paginate(5);
+
+         
+       
+        $receta->each(function($receta){
+            $receta->interlocutor;
+            $receta->producto;
+            $receta->estado;
+        });
+
+
+        return view('fw.recetas.index')->with('receta',$receta);
+
+
+
     }
 
     /**
@@ -24,7 +43,10 @@ class RecetaController extends Controller
      */
     public function create()
     {
-        //
+        $producto = Producto::select('nombre','id_producto')->pluck('nombre','id_producto');
+        $estado = Estado::select('descripcion','id_estado')->pluck('descripcion','id_estado');
+        return view('fw.recetas.create')->with('producto',$producto)
+                                  ->with('estado',$estado);
     }
 
     /**
@@ -35,7 +57,9 @@ class RecetaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $receta=new Receta($request->all());
+        $receta->save();
+        return redirect()->route('recetas.index');
     }
 
     /**
@@ -55,9 +79,14 @@ class RecetaController extends Controller
      * @param  \App\Receta  $receta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Receta $receta)
+    public function edit($id)
     {
-        //
+        $receta = Receta::findOrFail($id);
+        $producto = Producto::select('nombre','id_producto')->pluck('nombre','id_producto');
+        $estado = Estado::select('descripcion','id_estado')->pluck('descripcion','id_estado');
+        return view('fw.recetas.edit')->with('receta',$receta)
+                                      ->with('producto',$producto)
+                                      ->with('estado',$estado);
     }
 
     /**
@@ -67,9 +96,13 @@ class RecetaController extends Controller
      * @param  \App\Receta  $receta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Receta $receta)
+    public function update(Request $request, $id)
     {
-        //
+        $receta=Receta::findOrFail($id);
+        $receta->nombre =$request->nombre;
+        $receta->descripcion =$request->descripcion;
+        $receta->save();
+        return redirect()->route('recetas.index');
     }
 
     /**
@@ -78,8 +111,11 @@ class RecetaController extends Controller
      * @param  \App\Receta  $receta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Receta $receta)
+    public function destroy($id)
     {
-        //
+        $receta = Receta::findOrFail($id);
+        $receta->delete();
+        return redirect()->route('recetas.index');
+        
     }
 }
