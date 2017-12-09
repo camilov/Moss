@@ -3,6 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Producto;
+use App\Insumo_movimiento;
+use App\Pedido_item;
+use App\Producto_categoria;
+use App\Producto_tipo;
+use App\Unidad_medida;
+use App\Estado;
+use App\Interlocutor;
+use App\Producto_stock;
+use App\Receta;
+use App\Receta_ingrediente;
+use App\Transaccion_item;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -14,7 +25,20 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $producto = Producto::orderBy('id_producto','ASC')->paginate(5);
+
+         
+       
+        $producto->each(function($producto){
+            $producto->categoria;
+            $producto->estado;
+        });
+
+
+        return view('fw.productos.index')->with('producto',$producto);
+
+
+
     }
 
     /**

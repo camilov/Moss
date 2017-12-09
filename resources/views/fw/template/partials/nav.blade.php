@@ -117,9 +117,9 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href={{route('recetas.index')}}><i class="fa fa-circle-o"></i> Recetas</a></li>
+                <li><a href="{{route('recetas.index')}}"><i class="fa fa-circle-o"></i> Recetas</a></li>
                 <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
-                <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Productos</a></li>
+                <li><a href="{{route('productos.index')}}"><i class="fa fa-circle-o"></i> Productos</a></li>
                 <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Proveedores</a></li>
                 <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Categoria de productos</a></li>
                 <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Mesas</a></li>

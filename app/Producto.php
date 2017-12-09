@@ -39,11 +39,6 @@ class Producto extends Model
         return $this->hasMany('App\Pedido_item');
     }
 
-     public function guia()
-    {
-        return $this->hasMany('sisVentas\Guia');
-    }
-
      public function categoria()
     {
         return $this->belongsTo('App\Producto_categoria','producto_categoria_id');
@@ -81,7 +76,7 @@ class Producto extends Model
 
     public function recetaIngrediente()
     {
-        return $this->hasmany('App\RecetaIngrediente');
+        return $this->hasmany('App\Receta_ingrediente');
     }
 
     public function transaccionItem()
