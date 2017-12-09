@@ -27,4 +27,9 @@ Route::group(['prefix'=>'fw'], function(){
 	        'as'  => 'recetas.destroy'
 	    ]);
 
+	Route::resource('productos','ProductoController');
 	});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

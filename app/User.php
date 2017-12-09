@@ -29,7 +29,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'clave'
+        'password'
     ];
 
      public function interlocutor()
