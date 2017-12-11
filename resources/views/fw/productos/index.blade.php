@@ -7,7 +7,7 @@
 @section('content')
     
 
-   
+    <a href="{{route('productos.create')}}" class="btn btn-info">Nuevo producto</a><hr>
     <table class="table table-striped">
         <thead>
             <th>Categoria</th>
@@ -15,8 +15,6 @@
             <th>Precio</th>
             <th>Inventario</th>
             <th>Estado</th>
-            
-
         </thead>
         <tbody>
             @foreach($producto as $productos)

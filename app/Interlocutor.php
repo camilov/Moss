@@ -75,7 +75,6 @@ class Interlocutor extends Model
         return $this->hasMany('App\Producto');
     }
 
-
     public function receta()
     {
         return $this->hasMany('App\Receta');
