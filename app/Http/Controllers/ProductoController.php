@@ -50,10 +50,10 @@ class ProductoController extends Controller
     {
       
         $categoria = Producto_categoria::select('nombre','id_producto_categoria')->pluck('nombre','id_producto_categoria');
-        $producto = Producto::select('iva_incluido','id_producto')->pluck('iva_incluido','id_producto');
+        $iva = Producto::select('iva_incluido','id_producto')->pluck('iva_incluido','id_producto');
         $stock = Producto::select('stock_control')->pluck('stock_control');
         return view('fw.productos.create')->with('categoria',$categoria)
-                                          ->with('producto',$producto)
+                                          ->with('iva',$iva)
                                           ->with('stock',$stock);
                                   
     }

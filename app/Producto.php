@@ -17,7 +17,7 @@ class Producto extends Model
     public      $timestamps=false;
 
     protected $fillable = [
-        'id_producto', 'referencia', 'barcode','nombre','nombre_corto','producto_categoria_id','producto_tipo_id','iva','iva_incluido','costo','precio','imagen','descripcion','unidad_medida_id','stock_control','estante','orden','estado_id','interlocutor_id'
+        'id_producto', 'barcode','nombre','nombre_corto','producto_categoria_id','producto_tipo_id','iva','iva_incluido','costo','precio','imagen','descripcion','unidad_medida_id','stock_control','estante','orden','estado_id','interlocutor_id'
     ];
 
     /**

@@ -28,6 +28,7 @@ Route::group(['prefix'=>'fw'], function(){
 	    ]);
 
 	Route::resource('productos','ProductoController');
+	Route::resource('operaciones','OperacionesController');
 	});
 
 Auth::routes();
