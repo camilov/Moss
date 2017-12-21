@@ -9,17 +9,15 @@
 
       
        {!! Form::open(['route'=>'operaciones.store','method'=>'POST']) !!}
-            @foreach($tabla as $tablas) 
-            <tr>
-                 <td><button >{{$tablas->nombre}}</button></td>
-            
-            </tr>
-           
-               
-        
+            @foreach($categoria as $categorias) 
+                    <div id='container'>
+                         <button class='boton'>{{$categorias->nombre}}</button>
+                    </div>
             @endforeach
 
+            
             <div class="form-group">
+                
                 {!! Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
             
         	</div>

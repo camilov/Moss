@@ -32,13 +32,13 @@ class OperacionesController extends Controller
      */
     public function create()
     {
-        $tabla  = DB::table('producto_categoria')
-                          ->select('nombre','id_producto_categoria')
+        $categoria  = DB::table('producto_categoria')
+                          ->select('nombre')
                           ->where('estado_id','=','1')
                           ->orderby('nombre')
                           ->get();
 
-        return view('fw.operaciones.create')->with('tabla',$tabla);
+        return view('fw.operaciones.create')->with('categoria',$categoria);
     }
 
     /**
@@ -49,7 +49,7 @@ class OperacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         
     }
 
     /**

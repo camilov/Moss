@@ -1,0 +1,22 @@
+#container{
+	 border: 1px solid #ccc;
+    float: left;
+    overflow: hidden;
+
+	
+}
+
+.boton{
+	border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-color: #999;
+    cursor: pointer;
+    float: left;
+    font-size: 0.8em;
+    outline: none;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
